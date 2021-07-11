@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArgoBox</title>
+    <link rel="stylesheet" href="libs/Cesium/Widgets/widgets.css">
+    <link rel="stylesheet" href="css/map.css">
+    <script src="libs/Cesium/Cesium.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/echarts/echarts.js"></script>
+    <script src="js/imagery-provider.util.js"></script>
+    <script src="js/geometries-helper.util.js"></script>
+    <script src="js/task-manager.js"></script>
+</head>
+<body>
+<div id="searchtool-container">
+    <div id="searchbar" class="float-box">
+        <input type="text" id="search-text" placeholder="输入浮标编号查找轨迹，如&ldquo;5906336&rdquo;">
+        <button id="search-btn" class="cesium-button">Search</button>
+    </div>
+    <div id="search-completion" class="float-box">
+        <ul id="search-completion-list">
+        </ul>
+    </div>
+    <div id="profile-container" class="float-box float-bottom" style="display: none">
+        <div id="diagram-container" class="profile-diagram"></div>
+    </div>
+</div>
+<div id="loading-modal" class="full-screen-modal">
+    <!--<img src="images/spinner.gif">-->
+    <div id="spinner"></div>
+    <div id="task-list-container">
+        <ul id="task-list">
+        </ul>
+    </div>
+</div>
+<div id="cesiumContainer"></div>
+<script src="js/map-init.js"></script>
+<script src="js/data-loader.js"></script>
+<script src="js/event-listener.js"></script> <!-- Should not be moved into <head> -->
+</body>
+</html>
